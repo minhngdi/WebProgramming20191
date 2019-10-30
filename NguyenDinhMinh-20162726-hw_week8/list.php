@@ -23,6 +23,7 @@ if(!isset($_SESSION['login_user'])){
 <body>
 <div class="h4 text-center border border-light p-2">
 	<p class="h4 mb-4 text-center">List Users</p>
+	<b id="welcome" class="text-center">Welcome : <i><?php echo $login_session; ?></i></b>
 	<form action="./server/logout.php" method="post">
 		<button type="submit" class="btn btn-danger">Log out</button>
 	</form>

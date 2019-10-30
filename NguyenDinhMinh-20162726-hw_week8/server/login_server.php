@@ -15,8 +15,10 @@
 	    if (!$user) { // if user exists
 		  $error = 'Username is not exist';
 		  echo "<div class='form'>
-			<h3 style=\"text-align: center\">Username/password is incorrect.</h3>";
-		//   header("location: index.php");
+			<h3 style=\"text-align: center\">Username/password is incorrect.</h3>
+			<h3 style=\"text-align: center\"><a href=\"../index.php\">Login again</a></h3>";
+
+		//   header("location: ../index.php");
  		}
 	    else {
 		// To protect MySQL injection for Security purpose
@@ -27,7 +29,7 @@
 		$stmt->store_result();
 		if($stmt->fetch()) //fetching the contents of the row {
 		$_SESSION['login_user'] = $username; // Initializing Session
-		header("location: list.php"); // Redirecting To Profile Page
+		header("location: ../list.php"); // Redirecting To Profile Page
 		mysqli_close($db); // Closing Connection
 		}
 	}
